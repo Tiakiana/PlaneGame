@@ -1,0 +1,77 @@
+﻿using UnityEngine;
+using UnityEngine.UI;
+using System.Collections;
+
+public class FlightManager : MonoBehaviour
+{
+    public GameObject PointOfOrigin;
+    public GameObject Direction;
+    public GameObject PlaneGameObject;
+    private XWingMovement movement;
+    // Use this for initialization
+	void Start ()
+	{
+	    Direction = PointOfOrigin.transform.FindChild("SelectDirection").gameObject;
+	}
+
+    public void StartSetDirection(GameObject plane)
+    {
+        PlaneGameObject = plane;
+        Direction.gameObject.SetActive(true);
+        movement = PlaneGameObject.GetComponent<XWingMovement>();
+        PointOfOrigin.transform.position = Input.mousePosition;
+
+    }
+
+    public void DoABarrelRoll(bool right)
+    {
+        movement.BarrelRoll(right);
+    }
+
+    public void ToggleAim()
+    {
+        PlaneGameObject.GetComponent<Inventory>().ToggleAim();
+    }
+
+    public void TurnPlaneLeft(float speed)
+    {
+        
+                movement.Turn(speed,false);
+        }
+
+    public void TurnPlaneRight(float speed)
+    {
+
+        movement.Turn(speed, true);
+
+    }
+
+    public void BankPlaneLeft(float speed)
+    {
+
+        movement.Bank(speed, false);
+    }
+
+    public void BankPlaneRight(float speed)
+    {
+        movement.Bank(speed, true);
+
+
+    }
+
+    public void FlyPlaneStraight(float speed)
+    {
+        movement.Straight(speed);
+    }
+
+    public void FlyPlaneStraightKoiogran(float speed)
+    {
+        movement.StraightKoiogran(speed);
+    }
+  
+
+    // Update is called once per frame
+    void Update () {
+      
+    }
+}

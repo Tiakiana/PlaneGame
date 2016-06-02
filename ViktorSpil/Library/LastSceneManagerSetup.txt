@@ -1,0 +1,4 @@
+sceneSetups:
+- path: Assets/Khorsairs/XWINGTHING.unity
+  isLoaded: 1
+  isActive: 1
