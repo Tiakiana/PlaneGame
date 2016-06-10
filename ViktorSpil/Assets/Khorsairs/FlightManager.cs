@@ -33,6 +33,27 @@ public class FlightManager : MonoBehaviour
         PlaneGameObject.GetComponent<Inventory>().ToggleAim();
     }
 
+    public void TurnPlaneRightTallonRoll(float speed)
+    {
+        movement.TurnTallonRoll(speed,true);
+    }
+
+    public void TurnPlaneLeftTallonRoll(float speed)
+    {
+        movement.TurnTallonRoll(speed,false);
+    }
+
+    public void BankPlaneRightSegnorLoop(float speed)
+    {
+        movement.BankSegnorLoop(speed,true);
+    }
+
+    public void BankPlaneLeftSegnorLoop(float speed)
+    {
+        movement.BankSegnorLoop(speed,false);
+    }
+
+
     public void TurnPlaneLeft(float speed)
     {
         

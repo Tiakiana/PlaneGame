@@ -63,6 +63,7 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Assets\CameraControl.cs" />
     <Compile Include="Assets\Inventory.cs" />
     <Compile Include="Assets\Khorsairs\DrawSolidArc.cs" />
     <Compile Include="Assets\Khorsairs\ExampleClass.cs" />
