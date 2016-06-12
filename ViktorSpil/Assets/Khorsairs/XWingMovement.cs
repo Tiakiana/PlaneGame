@@ -126,10 +126,65 @@ public class XWingMovement : MonoBehaviour
 
     }
 
+    public void BankSegnorLoop(float speed, bool right)
+    {
+        float sped = speed * 2;
+        int rotaion = -1;
+        if (!right)
+        {
+            sped -= speed * 4;
+            rotaion = 1;
+        }
+        GameObject hejsa = Instantiate(thing, transform.TransformPoint(Vector3.right * sped), Quaternion.identity) as GameObject;
+        hejsa.AddComponent<Rotations>().SetDegrees(45, rotaion);
+        transform.SetParent(hejsa.transform);
+        StartCoroutine(WaitAndTurn(0.7f, 180));
+    }
+
+
+    public void TurnTallonRoll(float speed, bool right)
+    {
+        float sped = speed;
+        int rotaion = -1;
+        if (!right)
+        {
+            sped -= speed * 2;
+            rotaion = 1;
+        }
+        GameObject hejsa = Instantiate(thing, transform.TransformPoint(Vector3.right * sped), Quaternion.identity) as GameObject;
+        hejsa.AddComponent<Rotations>().SetDegrees(90, rotaion);
+        transform.SetParent(hejsa.transform);
+        if (right)
+        {
+        StartCoroutine(WaitAndTurn(0.7f, -90));
+
+        }
+        else
+        {
+        StartCoroutine(WaitAndTurn(0.7f, 90));
+
+        }
+
+    }
+
+    IEnumerator WaitAndTurn(float time, float degrees)
+    {
+        yield return new WaitForSeconds(time);
+        transform.RotateAround(transform.position, Vector3.forward, degrees);
+
+    }
+
     // Update is called once per frame
     void Update ()
     {
 
-    
+        if (Input.GetKeyUp("l"))
+        {
+       TurnTallonRoll(1,true);
+        }
+        if (Input.GetKeyUp("k"))
+        {
+            TurnTallonRoll(1, false);
+        }
     }
 }
