@@ -89,7 +89,13 @@ public class FlightManager : MonoBehaviour
     {
         movement.StraightKoiogran(speed);
     }
-  
+
+    public void CallPlaneAndChildren()
+    {
+        PlaneGameObject.BroadcastMessage("TestRangeNear");
+     //   PlaneGameObject.BroadcastMessage("FadeInOut");
+    }
+
 
     // Update is called once per frame
     void Update () {
