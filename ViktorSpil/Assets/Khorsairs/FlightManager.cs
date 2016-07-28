@@ -7,6 +7,7 @@ public class FlightManager : MonoBehaviour
     public GameObject PointOfOrigin;
     public GameObject Direction;
     public GameObject PlaneGameObject;
+    public Slider SliderHere;
     private XWingMovement movement;
     // Use this for initialization
 	void Start ()
@@ -20,6 +21,7 @@ public class FlightManager : MonoBehaviour
         Direction.gameObject.SetActive(true);
         movement = PlaneGameObject.GetComponent<XWingMovement>();
         PointOfOrigin.transform.position = Input.mousePosition;
+        // SliderHere.value = plane.transform.rotation
 
     }
 

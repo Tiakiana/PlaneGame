@@ -17,6 +17,7 @@ public class XWingMovement : MonoBehaviour
     void Start () {
 	thing = new GameObject();
         FlightManager = GameObject.FindGameObjectWithTag("FlightManager");
+        Physics2D.IgnoreLayerCollision(13,13,true);
 	}
 
 
