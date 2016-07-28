@@ -93,6 +93,7 @@
     <Compile Include="Assets\Scripts\FuegoSCR\cameraShake.cs" />
     <Compile Include="Assets\Scripts\Gun.cs" />
     <Compile Include="Assets\Scripts\HealthPickup.cs" />
+    <Compile Include="Assets\Scripts\KhorsairsSndCtrl.cs" />
     <Compile Include="Assets\Scripts\KnifeScr.cs" />
     <Compile Include="Assets\Scripts\LayBombs.cs" />
     <Compile Include="Assets\Scripts\Pauser.cs" />
