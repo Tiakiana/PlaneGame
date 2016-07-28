@@ -106,6 +106,7 @@
     <Compile Include="Assets\Scripts\SetParticleSortingLayer.cs" />
     <Compile Include="Assets\Scripts\Spawner.cs" />
     <Compile Include="Assets\Scripts\StabScr.cs" />
+    <Compile Include="Assets\SliderScr.cs" />
     <Compile Include="Assets\SpawnItem.cs" />
     <Compile Include="Assets\SpawnManager.cs" />
     <Compile Include="Assets\viktor psil\Player2Control.cs" />

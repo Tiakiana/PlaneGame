@@ -20,8 +20,12 @@ public class XWingMovement : MonoBehaviour
         Physics2D.IgnoreLayerCollision(13,13,true);
 	}
 
+    public void RotateMe(float angle)
+    {
+        transform.RotateAround(transform.position,transform.up,angle);
+    }
 
-   public void Straight(float speed)
+    public void Straight(float speed)
     {
         start = transform.position;
        target = transform.position + transform.up * speed;

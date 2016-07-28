@@ -9,6 +9,7 @@ public class FlightManager : MonoBehaviour
     public GameObject PlaneGameObject;
     public Slider SliderHere;
     private XWingMovement movement;
+    private bool sliderActive = false;
     // Use this for initialization
 	void Start ()
 	{
@@ -21,7 +22,24 @@ public class FlightManager : MonoBehaviour
         Direction.gameObject.SetActive(true);
         movement = PlaneGameObject.GetComponent<XWingMovement>();
         PointOfOrigin.transform.position = Input.mousePosition;
-        // SliderHere.value = plane.transform.rotation
+        SliderHere.GetComponent<SliderScr>().SetPlane(plane);
+
+
+    }
+
+    public void ToggleSlider()
+    {
+        if (sliderActive)
+        {
+            SliderHere.gameObject.SetActive(false);
+            sliderActive = false;
+        }
+        else
+        {
+            SliderHere.gameObject.SetActive(true);
+            sliderActive = true;
+
+        }
 
     }
 
@@ -101,6 +119,9 @@ public class FlightManager : MonoBehaviour
 
     // Update is called once per frame
     void Update () {
-      
+        if (Input.GetKeyUp("r"))
+        {
+            ToggleSlider();
+        }
     }
 }
