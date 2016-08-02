@@ -72,6 +72,7 @@
     <Compile Include="Assets\Khorsairs\ImClicked.cs" />
     <Compile Include="Assets\Khorsairs\MakeUmbrella.cs" />
     <Compile Include="Assets\Khorsairs\MarkerFade.cs" />
+    <Compile Include="Assets\Khorsairs\PlaneAI.cs" />
     <Compile Include="Assets\Khorsairs\PopUp.cs" />
     <Compile Include="Assets\Khorsairs\RangeRulerTrigger.cs" />
     <Compile Include="Assets\Khorsairs\Rotations.cs" />

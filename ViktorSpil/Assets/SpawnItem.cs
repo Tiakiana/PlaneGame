@@ -19,6 +19,7 @@ public class SpawnItem : MonoBehaviour
 
     void OnMouseDown()
     {
+      
         ImClicked();
     }
 

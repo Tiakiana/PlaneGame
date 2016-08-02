@@ -182,7 +182,7 @@ GameObject:
   - 114: {fileID: 11482768}
   m_Layer: 13
   m_Name: Fledermaus mk1
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

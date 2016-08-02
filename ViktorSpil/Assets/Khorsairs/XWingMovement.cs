@@ -12,8 +12,10 @@ public class XWingMovement : MonoBehaviour
     private Vector3 target;
     public GameObject thing;
     public GameObject FlightManager;
-    
-    
+    public Vector3 LastPosition;
+    public Vector3 LastRotation;
+
+
     void Start () {
 	thing = new GameObject();
         FlightManager = GameObject.FindGameObjectWithTag("FlightManager");

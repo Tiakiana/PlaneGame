@@ -10,6 +10,7 @@ public class FlightManager : MonoBehaviour
     public Slider SliderHere;
     private XWingMovement movement;
     private bool sliderActive = false;
+    
     // Use this for initialization
 	void Start ()
 	{
@@ -25,6 +26,16 @@ public class FlightManager : MonoBehaviour
         SliderHere.GetComponent<SliderScr>().SetPlane(plane);
 
 
+    }
+
+    public void RevertLastMove()
+    {
+        if (PlaneGameObject!= null && movement!= null)
+        {
+        PlaneGameObject.transform.position = movement.LastPosition;
+            PlaneGameObject.transform.eulerAngles = movement.LastRotation;
+
+        }
     }
 
     public void ToggleSlider()
@@ -60,41 +71,53 @@ public class FlightManager : MonoBehaviour
 
     public void TurnPlaneLeftTallonRoll(float speed)
     {
+        movement.LastPosition = PlaneGameObject.transform.position;
+        movement.LastRotation = PlaneGameObject.transform.eulerAngles;
         movement.TurnTallonRoll(speed,false);
     }
 
     public void BankPlaneRightSegnorLoop(float speed)
     {
+
+        movement.LastPosition = PlaneGameObject.transform.position;
+        movement.LastRotation = PlaneGameObject.transform.eulerAngles;
         movement.BankSegnorLoop(speed,true);
     }
 
     public void BankPlaneLeftSegnorLoop(float speed)
     {
+        movement.LastPosition = PlaneGameObject.transform.position;
+        movement.LastRotation = PlaneGameObject.transform.eulerAngles;
         movement.BankSegnorLoop(speed,false);
     }
 
 
     public void TurnPlaneLeft(float speed)
     {
-        
-                movement.Turn(speed,false);
+        movement.LastPosition = PlaneGameObject.transform.position;
+        movement.LastRotation = PlaneGameObject.transform.eulerAngles;
+        movement.Turn(speed,false);
         }
 
     public void TurnPlaneRight(float speed)
     {
-
+        movement.LastPosition = PlaneGameObject.transform.position;
+        movement.LastRotation = PlaneGameObject.transform.eulerAngles;
         movement.Turn(speed, true);
 
     }
 
     public void BankPlaneLeft(float speed)
     {
-
+        movement.LastPosition = PlaneGameObject.transform.position;
+        movement.LastRotation = PlaneGameObject.transform.eulerAngles;
         movement.Bank(speed, false);
     }
 
     public void BankPlaneRight(float speed)
     {
+        movement.LastPosition = PlaneGameObject.transform.position;
+        movement.LastRotation = PlaneGameObject.transform.eulerAngles;
         movement.Bank(speed, true);
 
 
@@ -102,11 +125,15 @@ public class FlightManager : MonoBehaviour
 
     public void FlyPlaneStraight(float speed)
     {
+        movement.LastPosition = PlaneGameObject.transform.position;
+        movement.LastRotation = PlaneGameObject.transform.eulerAngles;
         movement.Straight(speed);
     }
 
     public void FlyPlaneStraightKoiogran(float speed)
     {
+        movement.LastPosition = PlaneGameObject.transform.position;
+        movement.LastRotation = PlaneGameObject.transform.eulerAngles;
         movement.StraightKoiogran(speed);
     }
 
@@ -122,6 +149,10 @@ public class FlightManager : MonoBehaviour
         if (Input.GetKeyUp("r"))
         {
             ToggleSlider();
+        }
+        if (Input.GetKeyUp("z"))
+        {
+            RevertLastMove();
         }
     }
 }
