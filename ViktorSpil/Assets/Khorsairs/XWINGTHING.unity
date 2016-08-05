@@ -1287,7 +1287,7 @@ Camera:
   m_Enabled: 1
   serializedVersion: 2
   m_ClearFlags: 1
-  m_BackGroundColor: {r: 0.19215687, g: 0.3019608, b: 0.4745098, a: 0.019607844}
+  m_BackGroundColor: {r: 0.81568635, g: 0.8117648, b: 0.81568635, a: 0.019607844}
   m_NormalizedViewPortRect:
     serializedVersion: 2
     x: 0
@@ -1319,7 +1319,7 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 261340707}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -7.84, y: 1.64, z: -10}
+  m_LocalPosition: {x: -7.84, y: 1.64, z: -10.78}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_Children: []
@@ -5382,7 +5382,7 @@ Transform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 18
+  m_RootOrder: 19
 --- !u!1 &1093915489
 GameObject:
   m_ObjectHideFlags: 0
@@ -10857,6 +10857,52 @@ CanvasRenderer:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 2056813167}
+--- !u!1001 &2061200825
+Prefab:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 494668, guid: 9686de5be6604ed4cb3c93f46dad8fb3, type: 2}
+      propertyPath: m_LocalPosition.x
+      value: -24.322315
+      objectReference: {fileID: 0}
+    - target: {fileID: 494668, guid: 9686de5be6604ed4cb3c93f46dad8fb3, type: 2}
+      propertyPath: m_LocalPosition.y
+      value: 6.8632865
+      objectReference: {fileID: 0}
+    - target: {fileID: 494668, guid: 9686de5be6604ed4cb3c93f46dad8fb3, type: 2}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 494668, guid: 9686de5be6604ed4cb3c93f46dad8fb3, type: 2}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 494668, guid: 9686de5be6604ed4cb3c93f46dad8fb3, type: 2}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 494668, guid: 9686de5be6604ed4cb3c93f46dad8fb3, type: 2}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 494668, guid: 9686de5be6604ed4cb3c93f46dad8fb3, type: 2}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 494668, guid: 9686de5be6604ed4cb3c93f46dad8fb3, type: 2}
+      propertyPath: m_RootOrder
+      value: 19
+      objectReference: {fileID: 0}
+    - target: {fileID: 180296, guid: 9686de5be6604ed4cb3c93f46dad8fb3, type: 2}
+      propertyPath: m_Name
+      value: Seishin Furai
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_ParentPrefab: {fileID: 100100000, guid: 9686de5be6604ed4cb3c93f46dad8fb3, type: 2}
+  m_IsPrefabParent: 0
 --- !u!1 &2080507069
 GameObject:
   m_ObjectHideFlags: 0
@@ -10999,6 +11045,37 @@ CanvasRenderer:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 2092736298}
+--- !u!1 &2106878165 stripped
+GameObject:
+  m_PrefabParentObject: {fileID: 180296, guid: 9686de5be6604ed4cb3c93f46dad8fb3, type: 2}
+  m_PrefabInternal: {fileID: 2061200825}
+--- !u!114 &2106878166
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 2106878165}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 79b51a138abdef44aa8c2835d1340650, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  SpawnPrefab: {fileID: 193986, guid: 3778c2ee24f3f5a44b4418ed624b2c22, type: 2}
+  SpriteShadow: {fileID: 180296, guid: 9686de5be6604ed4cb3c93f46dad8fb3, type: 2}
+--- !u!61 &2106878169
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 2106878165}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_Offset: {x: 0, y: 0}
+  serializedVersion: 2
+  m_Size: {x: 0.6, y: 0.6}
 --- !u!1 &2146861234
 GameObject:
   m_ObjectHideFlags: 0
