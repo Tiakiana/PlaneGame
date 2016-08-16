@@ -64,6 +64,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Assets\CameraControl.cs" />
+    <Compile Include="Assets\Connection.cs" />
     <Compile Include="Assets\Inventory.cs" />
     <Compile Include="Assets\Khorsairs\DrawSolidArc.cs" />
     <Compile Include="Assets\Khorsairs\ExampleClass.cs" />
@@ -111,6 +112,7 @@
     <Compile Include="Assets\SliderScr.cs" />
     <Compile Include="Assets\SpawnItem.cs" />
     <Compile Include="Assets\SpawnManager.cs" />
+    <Compile Include="Assets\TCPClient.cs" />
     <Compile Include="Assets\viktor psil\Player2Control.cs" />
     <Compile Include="Assets\viktor psil\PlayerControl2.cs" />
   </ItemGroup>

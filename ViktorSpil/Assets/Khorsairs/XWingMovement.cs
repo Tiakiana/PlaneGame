@@ -20,6 +20,7 @@ public class XWingMovement : MonoBehaviour
 	thing = new GameObject();
         FlightManager = GameObject.FindGameObjectWithTag("FlightManager");
         Physics2D.IgnoreLayerCollision(13,13,true);
+      //  SendMessage("JAkob");
 	}
 
     public void RotateMe(float angle)
