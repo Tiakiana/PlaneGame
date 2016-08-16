@@ -22,8 +22,20 @@ public class Inventory : MonoBehaviour
         }
     }
 
+    public void Activate()
+    {
+            Aim.SetActive(true);
+
+    }
+
+    public void Deactivate()
+    {
+        Aim.SetActive(false);
+
+    }
+
     // Update is called once per frame
-	void Update () {
+    void Update () {
 	
 	}
 }
