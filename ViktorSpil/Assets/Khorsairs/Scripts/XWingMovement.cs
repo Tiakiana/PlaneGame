@@ -35,6 +35,13 @@ public class XWingMovement : MonoBehaviour
         StartCoroutine("GoingStraight");
 
     }
+   /* public void Straight()
+    {
+        start = transform.position;
+        target = transform.position + transform.up * 1;
+        StartCoroutine("GoingStraight");
+
+    }*/
 
     public void StraightKoiogran(float speed)
     {

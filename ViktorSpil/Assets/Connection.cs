@@ -24,15 +24,15 @@ public class Connection : MonoBehaviour
     {
         TcpClient tcpClient = new TcpClient();
 
-        if (Inputs.text!=null)
-        {
+        
             int port = 8000;
-            IPEndPoint ipe = new IPEndPoint(IPAddress.Parse(Inputs.text), port);
+            IPEndPoint ipe = new IPEndPoint(IPAddress.Parse("127.0.0.1"), port);
             try
             {
                 clientSocket.Connect(ipe);
-                Thread t = new Thread(RecieveNumber);
-                t.Start();
+            /*      Thread t = new Thread(RecieveNumber);
+                  t.Start();*/
+            StartCoroutine("RecieveOrders");
             }
             catch (Exception)
             {
@@ -40,7 +40,7 @@ public class Connection : MonoBehaviour
                 
                 throw;
             }
-        }
+        
     }
 
     public void SendReady()
@@ -59,22 +59,75 @@ public class Connection : MonoBehaviour
 
     }
 
+    public IEnumerator RecieveOrders()
+    {
+        NetworkStream nstream = new NetworkStream(clientSocket);
+
+        StreamReader reader = new StreamReader(nstream);
+        while (true)
+        {
+            string input;
+            
+            if (nstream.DataAvailable)
+            {
+       
+                input = reader.ReadLine();
+                Debug.Log(input);
+                if (input.Contains("St"))
+                {
+                    string[] sd = input.Split(';');
+                    //Metodenavn
+                    //Hastighed
+                    gameObject.BroadcastMessage(sd[0], Int32.Parse(sd[1]));
+                    Debug.Log(sd[0] + " " + sd[1]);
+
+                }
+                yield return new WaitForSeconds(0.1f);
+
+            }
+            yield return new WaitForSeconds(0.1f);
+
+        }
+    }
+
     public void RecieveNumber()
     {
         NetworkStream nstream = new NetworkStream(clientSocket);
         
         StreamReader reader = new StreamReader(nstream);
-      
         while (true)
         {
-            Debug.Log(reader.ReadLine());
+            string input = reader.ReadLine();
+
+            Debug.Log(input);
+
+            if (input.Contains("St") )
+            {
+                string[] sd = input.Split(';');
+                //Metodenavn
+                //Hastighed
+
+           
+                
+
+                gameObject.BroadcastMessage(sd[0],sd[1]);
+            }
             Thread.Sleep(500);
         }
+        if (useGUILayout)
+        {
+            
+        }
+
+
         reader.Close();
         reader.Dispose();
     }
 
     void Update () {
-	
+        if (Input.GetKeyUp("l"))
+        {
+            ConnectToClient();
+        }
 	}
 }

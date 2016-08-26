@@ -66,6 +66,8 @@
     <Compile Include="Assets\AnimationScript.cs" />
     <Compile Include="Assets\CameraControl.cs" />
     <Compile Include="Assets\Connection.cs" />
+    <Compile Include="Assets\DeleteBar.cs" />
+    <Compile Include="Assets\Fisse.cs" />
     <Compile Include="Assets\Inventory.cs" />
     <Compile Include="Assets\Khorsairs\Scripts\DrawSolidArc.cs" />
     <Compile Include="Assets\Khorsairs\Scripts\ExampleClass.cs" />
